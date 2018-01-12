@@ -59,7 +59,7 @@ pipeline {
 			nexusPolicyEvaluation failBuildOnNetworkError: false,
 				iqApplication: NEXUS_ARTIFACTID,
 				iqScanPatterns: [[scanPattern: ARTIFACT_FILENAME ]],
-				iqStage: NEXUS_IQ_STAGE,
+				
 				jobCredentialsId: ''
 		  }
 		} // stage
