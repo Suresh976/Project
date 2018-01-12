@@ -28,7 +28,7 @@ pipeline {
 		//Build source code
 		  steps
 		  {
-			bat "\"${tool 'MsBuild 14.0'}\" NunitDemo.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"   
+			bat "\"${tool 'MsBuild 14'}\" NunitDemo.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"   
 			}
 		}//End Build source code 
 		
