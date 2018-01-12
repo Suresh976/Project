@@ -41,6 +41,16 @@ pipeline {
 				"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\ReportGenerator.3.1.0\\tools\\ReportGenerator.exe" "-reports:CodeCoverageResult.xml" "-targetdir:CodeCoverageReport"
 				"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\ReportUnit.1.2.1\\tools\\ReportUnit.exe" "Reporting" "Reporting\\Result"'''
 			}
-		}//End Build source code 	
+		}
+		//End Build source code 
+		
+		stage( 'Package into zip file' ) 
+		{
+		//Build source code
+		  steps
+		  {
+			bat '"C:\\Program Files\\7-Zip\\7z.exe" a  -r DemoNunit.zip -w NunitDemo.Test\\bin\\Release\\* -mem=AES256'
+			}
+		}//End Build source code
 	}
 }
