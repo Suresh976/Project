@@ -62,6 +62,6 @@ pipeline {
 				iqStage: NEXUS_IQ_STAGE,
 				jobCredentialsId: ''
 		  }
-		} // stage
+		} // stage	
 	}
 }
