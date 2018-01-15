@@ -53,15 +53,6 @@ pipeline {
 			}
 		}//End Build source code
 		
-		stage( "IQ Scans") {
-		  steps{
-			bat "echo 'Uploading to IQ: ${NEXUS_ARTIFACTID} stage: ${NEXUS_IQ_STAGE} file: ${ARTIFACT_FILENAME}'"
-			nexusPolicyEvaluation failBuildOnNetworkError: false,
-				iqApplication: NEXUS_ARTIFACTID,
-				iqScanPatterns: [[scanPattern: ARTIFACT_FILENAME ]],
-				iqStage: NEXUS_IQ_STAGE,
-				jobCredentialsId: ''
-		  }
-		} // stage	
+		
 	}
 }
