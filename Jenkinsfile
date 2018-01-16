@@ -63,17 +63,6 @@ pipeline {
 		  }
 		} // stage	
 		
-		 stage('Email')
-		{
-		 steps
-		{
-     		  emailext (
-      subject: "SUCCESSFUL: Job 'env.Pipe' 'env.37'",
-      body: """<p>SUCCESSFUL: Job 'env.Pipe' 'env.37':</p>
-        <p>Check console output at "<a href=" 'env.http://localhost:8080/job/Pipe/' "> 'env.Pipe' 'env.37'</a>"</p>""",
-      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-    ) 
-		 }
-                 } //stage
+		
 	}
 }
