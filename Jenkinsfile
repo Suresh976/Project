@@ -73,5 +73,7 @@ pipeline {
 		protocol: 'http', 
 		repository: 'Repo1', 
 		version: '3.7.1'
+		}
+	}
 	}
 }
