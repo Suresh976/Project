@@ -63,18 +63,6 @@ pipeline {
 		  }
 		} // stage	
 	
-		stage( "Upload to Nexus" ) {
-		  steps{	
-			  nexusArtifactUploader artifacts: [[artifactId: 'DemoNunit', classifier: '', file: 'DemoNunit.zip', type: '.zip']], 
-			  credentialsId: 'zil341Credentials', 
-			  groupId: 'nuget-hosted', 
-			  nexusUrl: 'http://localhost:9095', 
-			  nexusVersion: 'nexus3', 
-			  protocol: 'http', 
-			  repository: 'Repo1', 
-			  version: '1.42.0-01'			 
-		  }
-		}//stage	
-	 
+			 
 	}
 }
