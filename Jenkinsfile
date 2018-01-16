@@ -56,9 +56,9 @@ pipeline {
 		  steps{
 			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'Stage' file: 'DemoNunit.zip'"
 			nexusPolicyEvaluation failBuildOnNetworkError: false,
-				iqApplication: testapp01,
+				iqApplication: 'testapp01',
 				iqScanPatterns: [[scanPattern: DemoNunit.zip ]],
-				iqStage: 'Release',
+				iqStage: 'release',
 				jobCredentialsId: ''
 		  }
 		} // stage	
