@@ -49,10 +49,19 @@ pipeline {
 		//Build source code
 		  steps
 		  {
-			bat '"C:\\Program Files\\7-Zip\\7z.exe" a  -r "E:\\DemoNunit.zip" -w NunitDemo.Test\\bin\\Release\\* -mem=AES256'
+			bat '"C:\\Program Files\\7-Zip\\7z.exe" a  -r "DemoNunit.zip" -w NunitDemo.Test\\bin\\Release\\* -mem=AES256'
 			}
 		}//End Build source code
-		
+		stage( "IQ Scans") {
+		  steps{
+			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'Stage' file: 'DemoNunit.zip'"
+			nexusPolicyEvaluation failBuildOnNetworkError: false,
+				iqApplication: testapp01,
+				iqScanPatterns: [[scanPattern: DemoNunit.zip ]],
+				iqStage: 'Release',
+				jobCredentialsId: ''
+		  }
+		} // stage	
 		
 	}
 }
