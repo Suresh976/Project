@@ -63,37 +63,6 @@ pipeline {
 		  }
 		} // stage	
 		
-		stage('Email')
-		
-{
-step
-	{
-       
-  echo 'prune and cleanup'
-         
-   
-    bat 'npm prune'
-         
-   
-    bat 'rm node_modules -rf'
-
-         
-
-    mail body: 'project build successful',
-                     
-
-    from: 'sureshyaramasi@gmail.com',
-                     
-
-    replyTo: 'suresh.suri976@gmail.com',
-                     
-
-    subject: 'project build successful',
-                     
-
-    to: 'suresh.suri976@gmail.com'
-	}
-
- } //stage	 
+	 
 	}
 }
