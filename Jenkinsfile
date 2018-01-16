@@ -54,7 +54,7 @@ pipeline {
 		}//End Build source code
 		stage( "IQ Scans") {
 		  steps{
-			
+			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'Suresh' file: 'DemoNunit.zip'"
 			nexusPolicyEvaluation failBuildOnNetworkError: false,
 				iqApplication: 'Test002',
 				iqScanPatterns: [[scanPattern: 'DemoNunit.zip' ]],
