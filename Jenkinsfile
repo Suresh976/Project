@@ -63,7 +63,7 @@ pipeline {
 		  }
 		} // stage	
 		
-		 stage('Cleanup')
+		 stage('Email')
 		{
 		 steps
 		{
