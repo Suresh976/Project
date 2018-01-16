@@ -64,7 +64,7 @@ pipeline {
 		} // stage	
 	
 		nexusArtifactUploader artifacts: [[artifactId: 'DemoNunit', classifier: '', file: 'DemoNunit.zip', type: 'zip']],
-		credentialsId: '', 
+		credentialsId: 'RepoCredentials', 
 		groupId: 'npmNUnitGroup', 
 		nexusUrl: 'localhost:9095', 
 		nexusVersion: 'nexus3', 
