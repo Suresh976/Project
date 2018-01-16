@@ -62,19 +62,7 @@ pipeline {
 				jobCredentialsId: ''
 		  }
 		} // stage	
-		 stage('Cleanup')
-		{
-
-         echo 'prune and cleanup'
-         sh 'npm prune'
-         sh 'rm node_modules -rf'
-
-         mail body: 'project build successful',
-                     from: 'sureshyaramasi@gmail.com',
-                     replyTo: 'suresh.suri976@gmail.com',
-                     subject: 'project build successful',
-                     to: 'sirishamaddineni25@gmail.com'
-       }		 
+		
 		
 	}
 }
