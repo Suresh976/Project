@@ -66,7 +66,8 @@ pipeline {
 		stage('Email')
 		
 {
-
+step
+	{
        
   echo 'prune and cleanup'
          
@@ -91,7 +92,7 @@ pipeline {
                      
 
     to: 'suresh.suri976@gmail.com'
-     
+	}
 
  } //stage	 
 	}
