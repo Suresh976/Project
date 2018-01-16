@@ -63,6 +63,12 @@ pipeline {
 		  }
 		} // stage	
 	
-			 
+		nexusArtifactUploader credentialsId: '', 
+		groupId: 'npmNUnitGroup', 
+		nexusUrl: 'localhost:9095', 
+		nexusVersion: 'nexus3', 
+		protocol: 'http', 
+		repository: 'Repo1', 
+		version: '3.7.1'
 	}
 }
