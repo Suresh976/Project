@@ -65,6 +65,8 @@ pipeline {
 		
 		 stage('Cleanup')
 		{
+		 steps
+		{
      		  echo 'prune and cleanup'
          	    bat 'npm prune'
          	    bat 'rm node_modules -rf'
@@ -73,7 +75,7 @@ pipeline {
                     replyTo: 'suresh.suri976@gmail.com',
                     subject: 'project build successful',
                     to: 'suresh.suri976@gmail.com'
-     
+		 }
                  } //stage
 	}
 }
