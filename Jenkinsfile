@@ -65,7 +65,7 @@ pipeline {
 		stage("Upload to Repo")
 		{
 		steps{
-		nexusArtifactUploader artifacts: [artifactId: 'DemoNunit', classifier: '', file: 'DemoNunit.zip', type: 'zip'],
+		nexusArtifactUploader artifacts: [[artifactId: 'DemoNunit', classifier: '', file: 'DemoNunit.zip', type: 'zip']],
 		credentialsId: 'Credentials', 
 		groupId: 'NexusRepo12', 
 		nexusUrl: 'localhost:9095', 
