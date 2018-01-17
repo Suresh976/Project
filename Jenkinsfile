@@ -54,7 +54,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.4'"
+                         bat "git tag 'v1.5'"
 			}
 		}
 		stage( "IQ Scans") {
