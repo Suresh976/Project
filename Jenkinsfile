@@ -52,6 +52,11 @@ pipeline {
 			bat '"C:\\Program Files\\7-Zip\\7z.exe" a  -r "DemoNunit.zip" -w NunitDemo.Test\\bin\\Release\\* -mem=AES256'
 			}
 		}//End Build source code
+		stage ( "Committing Tags" ){                	  
+ 			steps {
+                         bat "git tag 'v1.0'"
+			}
+		}
 		stage( "IQ Scans") {
 		  steps{
 			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'Suresh' file: 'DemoNunit.zip'"
