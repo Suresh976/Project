@@ -71,7 +71,7 @@ pipeline {
 		nexusUrl: 'localhost:9095', 
 		nexusVersion: 'nexus3', 
 		protocol: 'http', 
-		repository: 'Repo12', 
+		repository: 'Repo12'/', 
 		version: '1.1'
 		}
 	}
