@@ -69,7 +69,7 @@ pipeline {
 		credentialsId: 'M12345', 
 		groupId: 'NewRepo-group', 
 		nexusUrl: 'zil271:9091', 
-		nexusVersion: 'nexus3', 
+		nexusVersion: 'nexus3.7.1', 
 		protocol: 'http', 
 		repository: 'NewRepo', 
 		version: '1.0'
