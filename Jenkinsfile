@@ -54,7 +54,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.11'"
+                         bat "git tag 'v1.12'"
 			}
 		}
 		stage( "IQ Scans") {
@@ -72,11 +72,11 @@ pipeline {
 		steps{
 		nexusArtifactUploader artifacts: [[artifactId: 'DemoNunit', classifier: '', file: 'DemoNunit.zip', type: 'zip']],
 		credentialsId: '9e4c984b-188f-4064-b70a-087b5f706e6d', 
-		groupId: 'Repo12-group', 
+		groupId: 'maven-public', 
 		nexusUrl: 'localhost:9095', 
 		nexusVersion: 'nexus3', 
 		protocol: 'http', 
-		repository: 'Repo12', 
+		repository: 'Repo', 
 		version: '1.1'
 		}
 	}
