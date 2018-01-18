@@ -59,7 +59,7 @@ pipeline {
 		}
 		stage( "IQ Scans") {
 		  steps{
-			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'Suresh' file: 'DemoNunit.zip'"
+			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'stage' file: 'DemoNunit.zip'"
 			nexusPolicyEvaluation failBuildOnNetworkError: false,
 				iqApplication: 'Test002',
 				iqScanPatterns: [[scanPattern: 'DemoNunit.zip' ]],
