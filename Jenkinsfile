@@ -54,7 +54,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.19'"
+                         bat "git tag 'v1.20'"
 			}
 		}
 		stage( "IQ Scans") {
@@ -77,7 +77,7 @@ pipeline {
 		nexusVersion: 'nexus3', 
 		protocol: 'http', 
 		repository: 'Repo', 
-		version: '1.1'
+		version: '1.2'
 		}
 	}
 	}
