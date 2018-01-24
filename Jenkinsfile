@@ -48,7 +48,7 @@ pipeline {
 		{
 			steps
 			{
-				nunit testResultsPattern: 'C:/Program Files (x86/Jenkins/workspace/Pipe/Reporting/TestResult.xml'
+				nunit testResultsPattern: '/Pipe/Reporting/TestResult.xml'
 			}
 		}
 
@@ -62,7 +62,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.24'"
+                         bat "git tag 'v1.25'"
 			}
 		}
 		stage( "IQ Scans") {
