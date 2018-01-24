@@ -72,7 +72,7 @@ pipeline {
 		stage ( "Sonar" ){                	  
  			 steps
 			{
-    	    withSonarQubeEnv('sonarqube-6.7') {
+    	    withSonarQubeEnv('SonarQube Scanner 3.0.3.778') {
       bat "{scannerHome}E:/Sonar/sonar-runner-dist-2.4/sonar-runner-2.4/bin/sonar-runner.bat"
 		}
 			}
