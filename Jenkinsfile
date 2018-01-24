@@ -44,23 +44,7 @@ pipeline {
 		}
 		//End Build source code 
 		
-		stage ( 'code coverage' )
-		{
-			steps
-			{
-				publishHTML([allowMissing: false,
-					     alwaysLinkToLastBuild: true, 
-					     keepAll: false,
-					     reportDir: 'Reporting',
-					     reportFiles: 'index.htm',
-					     reportName: 'Code Coverage Report',
-					     reportTitles: 'Code Coverage Report'])
-			}
-		}
-
 		
-		
-
 		stage( 'Package into zip file' ) 
 		{
 		//Build source code
