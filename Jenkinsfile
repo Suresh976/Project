@@ -48,7 +48,7 @@ pipeline {
 		{
 			steps
 			{
-				bat "Nunit testResultsPattern: 'TestResult.xml'"
+				nunit testResultsPattern: 'TestResult.xml'
 			}
 		}
 
