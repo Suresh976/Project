@@ -44,6 +44,14 @@ pipeline {
 		}
 		//End Build source code 
 		
+		stage( 'Nunit Report' )
+		{
+			steps
+			{
+				bat "nunit testResultsPattern: 'TestResult.xml'"
+			}
+		}
+
 		stage( 'Package into zip file' ) 
 		{
 		//Build source code
