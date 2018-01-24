@@ -52,7 +52,7 @@ pipeline {
 					     alwaysLinkToLastBuild: true, 
 					     keepAll: false,
 					     reportDir: 'Reporting',
-					     reportFiles: 'index.html',
+					     reportFiles: 'index.htm',
 					     reportName: 'Code Coverage Report',
 					     reportTitles: 'Code Coverage Report'])
 			}
@@ -71,7 +71,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.31'"
+                         bat "git tag 'v1.32'"
 			}
 		}
 		stage( "IQ Scans") {
