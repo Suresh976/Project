@@ -53,13 +53,17 @@ pipeline {
 			bat '"C:\\Program Files\\7-Zip\\7z.exe" a  -r "DemoNunit.zip" -w NunitDemo.Test\\bin\\Release\\* -mem=AES256'
 			}
 		}//End Build source code
-		stage ( "Sonar" ){                	  
- 			 steps
-			{
-    	    withSonarQubeEnv('SonarQube Scanner 3.0.3.778') {
-      bat "{scannerHome}E:/Sonar/sonar-runner-dist-2.4/sonar-runner-2.4/bin/sonar-runner.bat"
+		stage('Sonarqube analysis') {
+    steps {
+    script {
+             scannerHome = tool 'SonarScanner';
+        }
+     withSonarQubeEnv('SonarQube') {
+         
+	     bat "{scannerHome}E:/Sonar/sonar-runner-dist-2.4/sonar-runner-2.4/bin/sonar-runner.bat"
 		}
 			}
+		}
 	}
 	}
 }
