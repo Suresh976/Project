@@ -69,33 +69,13 @@ pipeline {
 			bat '"C:\\Program Files\\7-Zip\\7z.exe" a  -r "DemoNunit.zip" -w NunitDemo.Test\\bin\\Release\\* -mem=AES256'
 			}
 		}//End Build source code
-		stage ( "Committing Tags" ){                	  
- 			steps {
-                         bat "git tag 'v1.37'"
+		stage ( "Sonar" ){                	  
+ 			 steps
+			{
+    	    withSonarQubeEnv('sonarqube-6.7') {
+      bat "{scannerHome}E:/Sonar/sonar-runner-dist-2.4/sonar-runner-2.4/bin/sonar-runner.bat"
+		}
 			}
-		}
-		stage( "IQ Scans") {
-		  steps{
-			bat "echo 'Uploading to IQ: 'DemoNunit' stage:'stage' file: 'DemoNunit.zip'"
-			nexusPolicyEvaluation failBuildOnNetworkError: false,
-				iqApplication: 'Test002',
-				iqScanPatterns: [[scanPattern: 'DemoNunit.zip' ]],
-				iqStage: 'release',
-				jobCredentialsId: ''
-		  }
-		} // stage	
-		stage("Upload to Repo")
-		{
-		steps{
-		nexusArtifactUploader artifacts: [[artifactId: 'DemoNunit', classifier: '', file: 'DemoNunit.zip', type: 'zip']],
-		credentialsId: '9e4c984b-188f-4064-b70a-087b5f706e6d', 
-		groupId: 'maven-public', 
-		nexusUrl: 'localhost:9095', 
-		nexusVersion: 'nexus3', 
-		protocol: 'http', 
-		repository: 'Repo', 
-		version: '1.2'
-		}
 	}
 	}
 }
