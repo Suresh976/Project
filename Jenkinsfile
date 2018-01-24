@@ -44,13 +44,22 @@ pipeline {
 		}
 		//End Build source code 
 		
-		stage( 'Nunit Report' )
+		stage ( 'code coverage' )
 		{
-			steps
+			step
 			{
-				nunit testResultsPattern: '/Pipe/Reporting/TestResult.xml'
+				publishHTML([allowMissing: false,
+					     alwaysLinkToLastBuild: false, 
+					     keepAll: false,
+					     reportDir: 'CodeCoverageReport',
+					     reportFiles: 'index.html',
+					     reportName: 'Code Coverage Report',
+					     reportTitles: 'Code Coverage Report'])
 			}
 		}
+
+		
+		
 
 		stage( 'Package into zip file' ) 
 		{
