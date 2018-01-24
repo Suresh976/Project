@@ -46,7 +46,7 @@ pipeline {
 		
 		stage ( 'code coverage' )
 		{
-			step
+			steps
 			{
 				publishHTML([allowMissing: false,
 					     alwaysLinkToLastBuild: false, 
