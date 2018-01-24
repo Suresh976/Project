@@ -38,7 +38,7 @@ pipeline {
 		  steps
 		  {
 			bat '''"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\OpenCover.4.6.519\\tools\\OpenCover.Console.exe" -target:"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\NUnit.ConsoleRunner.3.7.0\\tools\\nunit3-console.exe" -targetargs:"/work:Reporting --out:TestResult.txt .\\NunitDemo.Test\\bin\\Release\\NunitDemo.Test.dll"  -output:"CodeCoverageResult.xml"
-				"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\ReportGenerator.3.1.0\\tools\\ReportGenerator.exe" "-reports:CodeCoverageResult.xml" "-targetdir:Pipe\\NunitDemo.Test\\bin\\Debug\\Scripts\\CodeCoverageReport"
+				"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\ReportGenerator.3.1.0\\tools\\ReportGenerator.exe" "-reports:Pipe\\NunitDemo.Test\\bin\\Debug\\Scripts\\CodeCoverageReportCodeCoverageResult.xml" "-targetdir:Pipe\\NunitDemo.Test\\bin\\Debug\\Scripts\\CodeCoverageReport"
 				"C:\\Program Files (x86)\\Jenkins\\workspace\\Pipe\\packages\\ReportUnit.1.2.1\\tools\\ReportUnit.exe" "Reporting" "Reporting\\Result"'''
 			}
 		}
@@ -71,7 +71,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.33'"
+                         bat "git tag 'v1.34'"
 			}
 		}
 		stage( "IQ Scans") {
