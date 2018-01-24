@@ -48,7 +48,7 @@ pipeline {
 		{
 			steps
 			{
-				nunit testResultsPattern: 'C:\Program Files (x86)\Jenkins\workspace\Pipe\Reporting\TestResult.xml'
+				nunit testResultsPattern: 'C:/Program Files (x86/Jenkins/workspace/Pipe/Reporting/TestResult.xml'
 			}
 		}
 
