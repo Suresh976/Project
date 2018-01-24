@@ -51,7 +51,7 @@ pipeline {
 				publishHTML([allowMissing: false,
 					     alwaysLinkToLastBuild: true, 
 					     keepAll: false,
-					     reportDir: 'CodeCoverageReport',
+					     reportDir: 'Reporting',
 					     reportFiles: 'index.html',
 					     reportName: 'Code Coverage Report',
 					     reportTitles: 'Code Coverage Report'])
@@ -71,7 +71,7 @@ pipeline {
 		}//End Build source code
 		stage ( "Committing Tags" ){                	  
  			steps {
-                         bat "git tag 'v1.27'"
+                         bat "git tag 'v1.28'"
 			}
 		}
 		stage( "IQ Scans") {
